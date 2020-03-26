@@ -24,10 +24,21 @@ function play(){
          	echo "NO play.....";;
       	$SNAKE)
          	echo "snake......."
-         	((playerCurrPos-=$diceValue));;
-      	$LADDER)
+				if [ $(($playerCurrPos - $diceValue)) -lt 0 ]
+				then
+					playerCurrPos=$START
+				else
+
+	         	((playerCurrPos-=$diceValue))
+
+				fi;;
+			$LADDER)
          	echo "Ladder....."
-         	((playerCurrPos+=$diceValue));;
+				if [ $((playerCurrPos + $diceValue)) -le 100 ]
+         	then
+					((playerCurrPos+=$diceValue))
+				fi;;
+
    	esac
    	echo "player current position : $playerCurrPos"
 	done
