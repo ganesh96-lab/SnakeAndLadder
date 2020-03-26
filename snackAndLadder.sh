@@ -12,12 +12,12 @@ echo "starting position of player : $START"
 
 playerCurrPos=$START
 function play(){
-
+	noOfTimesDiceRoll=0
 	while [ $playerCurrPos -lt $WINNING ]
 	do
 		diceValue=$((RANDOM%6 + 1 ))
 		echo "Dice value is $diceValue"
-
+		((noOfTimesDiceRoll++))
    	option=$((RANDOM % 3))
    	case $option in
       	$NO_PLAY)
@@ -42,6 +42,8 @@ function play(){
    	esac
    	echo "player current position : $playerCurrPos"
 	done
+
+	echo " no of times dice roll to win $noOfTimesDiceRoll "
 }
 
 play
