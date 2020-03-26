@@ -33,9 +33,9 @@ function play(){
 
 				fi;;
 			$LADDER)
-         	echo "Ladder....."
+				echo "Ladder....."
 				if [ $((playerCurrPos + $diceValue)) -le 100 ]
-         	then
+				then
 					((playerCurrPos+=$diceValue))
 				fi;;
 
